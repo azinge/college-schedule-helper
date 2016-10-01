@@ -1,1 +1,1 @@
-LMU Schedule Helper
+# LMU Schedule Helper
