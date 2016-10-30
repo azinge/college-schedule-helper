@@ -1,26 +1,29 @@
 {
-    "name": "lmu-schedule-helper",
-    "version": "1.0.0",
-    "description": "A chrome extension for managing and enrolling for classes at LMU",
-    "main": "index.html",
-    "scripts": {
-        "dev": "http-server -p 3000",
-        "test": "node_modules/.bin/mocha -w"
-    },
-    "keywords": [],
-    "author": "cazinge",
-    "license": "ISC",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/cazinge/lmu-schedule-helper"
-    },
-    "bugs": {
-        "url": "https://github.com/cazinge/lmu-schedule-helper/issues"
-    },
-    "homepage": "https://github.com/cazinge/lmu-schedule-helper",
-    "devDependencies": {
-        "http-server": "*",
-        "chai": "*",
-        "mocha": "*"
-    }
+  "name": "schedule-helper",
+  "version": "1.0.0",
+  "description": "A chrome extension for managing and enrolling for classes",
+  "main": "index.html",
+  "scripts": {
+    "dev": "http-server -p 3000",
+    "test": "node_modules/.bin/mocha -w",
+    "jsonify:lmu": "node data/lmu/pdf-to-courses.js"
+  },
+  "keywords": [],
+  "author": "cazinge",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cazinge/schedule-helper"
+  },
+  "bugs": {
+    "url": "https://github.com/cazinge/schedule-helper/issues"
+  },
+  "homepage": "https://github.com/cazinge/schedule-helper",
+  "devDependencies": {
+    "chai": "*",
+    "http-server": "*",
+    "jsonfile": "^2.4.0",
+    "mocha": "*",
+    "node-ensure": "0.0.0"
+  }
 }
