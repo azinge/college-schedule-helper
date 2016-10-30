@@ -1,3 +1,3 @@
 # College Schedule Helper
 
-Currently working on CourseJS: github.com/cazinge/CourseJS
+Currently working on CourseJS: https://github.com/cazinge/CourseJS
