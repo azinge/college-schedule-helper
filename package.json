@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "http-server -p 3000",
     "test": "node_modules/.bin/mocha -w",
-    "jsonify:lmu": "node data/lmu/pdf-to-courses.js"
+    "jsonify:lmu": "node data/lmu/html-to-courses.js"
   },
   "keywords": [],
   "author": "cazinge",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/cazinge/schedule-helper",
   "devDependencies": {
     "chai": "*",
+    "cheerio": "^0.22.0",
     "http-server": "*",
     "jsonfile": "^2.4.0",
     "mocha": "*",

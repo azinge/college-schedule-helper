@@ -1,13 +1,9 @@
 {
-  "lastModified": "Tue Nov 01 2016 04:11:47 GMT-0700 (PDT)",
+  "lastModified": "Fri Dec 23 2016 16:24:07 GMT-0800 (PST)",
   "statuses": [
     {
-      "pdf": "data/lmu/pdf/Fall_2016.pdf",
-      "numCourses": 2532
-    },
-    {
-      "pdf": "data/lmu/pdf/Spring_2017.pdf",
-      "numCourses": 2487
+      "path": "data/lmu/html/Spring_2017.html",
+      "numCourses": 2529
     }
   ]
 }
