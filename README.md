@@ -4,7 +4,7 @@ College Schedule Helper is a project that aims to assist college students with o
 
 This wouldn't be much of a solution if it were only applicable to one college, so College Schedule Helper is being designed in such a way that anyone from any school can simply fork the project in order to have an interface usable to integrate with an API or database on their end!
 
-College Schedule Helper uses Course.js for standardizing dealing with courses, and react-schedule for modularizing the actual schedule part of the application so that it's embeddable in any webpage you so wish. 
+College Schedule Helper uses [Course.js](github.com/cazinge/CourseJS) for standardizing dealing with courses, and [react-schedule](github.com/cazinge/react-schedule) for modularizing the actual schedule part of the application so that it's embeddable in any webpage you so wish. 
 
 We currently aim to have a first version of the 3 parts of the project out by some time late march so that it's usable by this semester's schedule choosing cycle.
 
