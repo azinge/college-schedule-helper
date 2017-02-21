@@ -8,4 +8,4 @@ College Schedule Helper uses [Course.js](github.com/cazinge/CourseJS) for standa
 
 We currently aim to have a first version of the 3 parts of the project out by some time late march so that it's usable by this semester's schedule choosing cycle.
 
-Authored by Eddie Azinge
+Authored by Eddie Azinge and Brian Joerger
