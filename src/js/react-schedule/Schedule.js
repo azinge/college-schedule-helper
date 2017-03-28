@@ -157,7 +157,7 @@ SchedulePane.proptypes = {
 };
 
 function Schedule(props) {
-  let start = props.start || 900;
+  let start = props.start + 100 || 1000;
   let end = props.end || 1500;
 
   const titles = [
