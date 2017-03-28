@@ -157,8 +157,8 @@ SchedulePane.proptypes = {
 };
 
 function Schedule(props) {
-  let start = props.start + 100 || 1000;
-  let end = props.end || 1500;
+  let start = +props.start + 100 || 1000;
+  let end = +props.end || 1500;
 
   const titles = [
     ['Times', 'time', []],
@@ -176,6 +176,7 @@ function Schedule(props) {
       course && course.times.days[day] && course.times.days[day].length > 0);
 
   props.courses.forEach((course) => {
+    course.times &&
     course.times.getTimes().forEach((time) => {
       start = Math.min(time.start.time, start);
       end = Math.max(time.end.time, end);
@@ -225,8 +226,8 @@ function Schedule(props) {
 }
 Schedule.propTypes = {
   courses: PropTypes.array.isRequired,
-  start: PropTypes.number,
-  end: PropTypes.number,
+  start: PropTypes.string,
+  end: PropTypes.string,
 };
 
 export default Schedule;
