@@ -215,7 +215,7 @@ function Schedule(props) {
   return (
     <div className="schedule">
       <div className="schedule-header">
-        <Text>LMU Spring 2017 Schedule</Text>
+        <Text>LMU Fall 2017 Schedule</Text>
       </div>
       <div className="schedule-main">
         {schedulePanes}

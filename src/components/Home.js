@@ -1,12 +1,12 @@
 import React from 'react';
-import Schedule from './Schedule';
+import Schedule from '../js/react-schedule/Schedule';
 import CourseJS from './course';
 
 var Home = React.createClass({
   getInitialState: function () {
     return {
-      start: '8:00 AM',
-      end: '3:00 PM',
+      start: 900,
+      end: 1500,
       courses: []
     }
   },
@@ -73,7 +73,7 @@ var Home = React.createClass({
     ];
     var onGetInfo = this.onGetInfo;
 
-    $.getJSON("https://cdn.rawgit.com/cazinge/college-schedule-helper/f2e31f2b/data/lmu/json/Spring_2017.json", function(data) {
+    $.getJSON("https://cdn.rawgit.com/cazinge/college-schedule-helper/540c0672/data/lmu/json/Fall_2017.json", function(data) {
       courseMap = data;
       $("#crn-submit").prop("disabled", false);
       $('#crn-submit').click(() => {
@@ -98,7 +98,7 @@ var Home = React.createClass({
       <div className="container">
       <br /><br />
       <div className="row center">
-      <Schedule start={this.state.start} end={this.state.end} courses={this.state.courses} />
+      <Schedule courses={this.state.courses} start={this.state.start} end={this.state.end}/>
       </div>
       <div className="row center">
       <div className="row">
@@ -142,67 +142,67 @@ var Home = React.createClass({
       <div className="row">
       <div className="input-field col s6">
       <select id="examples">
-      <option value="" selected>Custom Schedule</option>
-      <option value="1">Example 1</option>
-      <option value="2">Example 2</option>
+      <option value="" selected>Custom Schedules: Coming Soon!</option>
       </select>
       <label>Example Schedules</label>
       </div>
       <div className="input-field col s2">
       <select id="start">
-      <option value="12:00 AM" selected>12:00 AM</option>
-      <option value="1:00 AM">1:00 AM</option>
-      <option value="2:00 AM">2:00 AM</option>
-      <option value="3:00 AM">3:00 AM</option>
-      <option value="4:00 AM">4:00 AM</option>
-      <option value="5:00 AM">5:00 AM</option>
-      <option value="6:00 AM">6:00 AM</option>
-      <option value="7:00 AM">7:00 AM</option>
-      <option value="8:00 AM" selected>8:00 AM</option>
-      <option value="9:00 AM">9:00 AM</option>
-      <option value="10:00 AM">10:00 AM</option>
-      <option value="11:00 AM">11:00 AM</option>
-      <option value="12:00 PM">12:00 PM</option>
-      <option value="1:00 PM">1:00 PM</option>
-      <option value="2:00 PM">2:00 PM</option>
-      <option value="3:00 PM">3:00 PM</option>
-      <option value="4:00 PM">4:00 PM</option>
-      <option value="5:00 PM">5:00 PM</option>
-      <option value="6:00 PM">6:00 PM</option>
-      <option value="7:00 PM">7:00 PM</option>
-      <option value="8:00 PM">8:00 PM</option>
-      <option value="9:00 PM">9:00 PM</option>
-      <option value="10:00 PM">10:00 PM</option>
-      <option value="11:00 PM">11:00 PM</option>
+      <option value={0} selected>12:00 AM</option>
+      <option value={100}>1:00 AM</option>
+      <option value={200}>2:00 AM</option>
+      <option value={300}>3:00 AM</option>
+      <option value={400}>4:00 AM</option>
+      <option value={500}>5:00 AM</option>
+      <option value={600}>6:00 AM</option>
+      <option value={700}>7:00 AM</option>
+      <option value={800}>8:00 AM</option>
+      <option value={900} selected>9:00 AM</option>
+      <option value={1000}>10:00 AM</option>
+      <option value={1100}>11:00 AM</option>
+      <option value={1200}>12:00 PM</option>
+      <option value={1300}>1:00 PM</option>
+      <option value={1400}>2:00 PM</option>
+      <option value={1500}>3:00 PM</option>
+      <option value={1600}>4:00 PM</option>
+      <option value={1700}>5:00 PM</option>
+      <option value={1800}>6:00 PM</option>
+      <option value={1900}>7:00 PM</option>
+      <option value={2000}>8:00 PM</option>
+      <option value={2100}>9:00 PM</option>
+      <option value={2200}>10:00 PM</option>
+      <option value={2300}>11:00 PM</option>
+      <option value={2400}>12:00 AM</option>
       </select>
       <label>Start Time</label>
       </div>
       <div className="input-field col s2">
       <select id="end">
-      <option value="12:00 AM" >12:00 AM</option>
-      <option value="1:00 AM">1:00 AM</option>
-      <option value="2:00 AM">2:00 AM</option>
-      <option value="3:00 AM">3:00 AM</option>
-      <option value="4:00 AM">4:00 AM</option>
-      <option value="5:00 AM">5:00 AM</option>
-      <option value="6:00 AM">6:00 AM</option>
-      <option value="7:00 AM">7:00 AM</option>
-      <option value="8:00 AM">8:00 AM</option>
-      <option value="9:00 AM">9:00 AM</option>
-      <option value="10:00 AM">10:00 AM</option>
-      <option value="11:00 AM">11:00 AM</option>
-      <option value="12:00 PM">12:00 PM</option>
-      <option value="1:00 PM">1:00 PM</option>
-      <option value="2:00 PM">2:00 PM</option>
-      <option value="3:00 PM" selected>3:00 PM</option>
-      <option value="4:00 PM">4:00 PM</option>
-      <option value="5:00 PM">5:00 PM</option>
-      <option value="6:00 PM">6:00 PM</option>
-      <option value="7:00 PM">7:00 PM</option>
-      <option value="8:00 PM">8:00 PM</option>
-      <option value="9:00 PM">9:00 PM</option>
-      <option value="10:00 PM">10:00 PM</option>
-      <option value="11:00 PM">11:00 PM</option>
+      <option value={0}>12:00 AM</option>
+      <option value={100}>1:00 AM</option>
+      <option value={200}>2:00 AM</option>
+      <option value={300}>3:00 AM</option>
+      <option value={400}>4:00 AM</option>
+      <option value={500}>5:00 AM</option>
+      <option value={600}>6:00 AM</option>
+      <option value={700}>7:00 AM</option>
+      <option value={800}>8:00 AM</option>
+      <option value={900}>9:00 AM</option>
+      <option value={1000}>10:00 AM</option>
+      <option value={1100}>11:00 AM</option>
+      <option value={1200}>12:00 PM</option>
+      <option value={1300}>1:00 PM</option>
+      <option value={1400}>2:00 PM</option>
+      <option value={1500} selected>3:00 PM</option>
+      <option value={1600}>4:00 PM</option>
+      <option value={1700}>5:00 PM</option>
+      <option value={1800}>6:00 PM</option>
+      <option value={1900}>7:00 PM</option>
+      <option value={2000}>8:00 PM</option>
+      <option value={2100}>9:00 PM</option>
+      <option value={2200}>10:00 PM</option>
+      <option value={2300}>11:00 PM</option>
+      <option value={2400}>12:00 AM</option>
       </select>
       <label>End Time</label>
       </div>
