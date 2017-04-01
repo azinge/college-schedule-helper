@@ -104,51 +104,51 @@ var Home = React.createClass({
       </div>
       <div className="row center">
       <div className="row">
-      <div className="input-field col s1">
+      <div className="input-field col l1 m2 s3">
       <input placeholder="CRN #1" id="CRN #1" type="text" className="validate crn" />
       </div>
-      <div className="input-field col s1">
+      <div className="input-field col l1 m2 s3">
       <input placeholder="CRN #2" id="CRN #2" type="text" className="validate crn" />
       </div>
-      <div className="input-field col s1">
+      <div className="input-field col l1 m2 s3">
       <input placeholder="CRN #3" id="CRN #3" type="text" className="validate crn" />
       </div>
-      <div className="input-field col s1">
+      <div className="input-field col l1 m2 s3">
       <input placeholder="CRN #4" id="CRN #4" type="text" className="validate crn" />
       </div>
-      <div className="input-field col s1">
+      <div className="input-field col l1 m2 s3">
       <input placeholder="CRN #5" id="CRN #5" type="text" className="validate crn" />
       </div>
-      <div className="input-field col s1">
+      <div className="input-field col l1 m2 s3">
       <input placeholder="CRN #6" id="CRN #6" type="text" className="validate crn" />
       </div>
-      <div className="input-field col s1">
+      <div className="input-field col l1 m2 s3">
       <input placeholder="CRN #7" id="CRN #7" type="text" className="validate crn" />
       </div>
-      <div className="input-field col s1">
+      <div className="input-field col l1 m2 s3">
       <input placeholder="CRN #8" id="CRN #8" type="text" className="validate crn" />
       </div>
-      <div className="input-field col s1">
+      <div className="input-field col l1 m2 s3">
       <input placeholder="CRN #9" id="CRN #9" type="text" className="validate crn" />
       </div>
-      <div className="input-field col s1">
+      <div className="input-field col l1 m2 s3">
       <input placeholder="CRN #10" id="CRN #10" type="text" className="validate crn" />
       </div>
-      <div className="input-field col s1">
+      <div className="input-field col l1 m2 s3">
       <input placeholder="CRN #11" id="CRN #11" type="text" className="validate crn" />
       </div>
-      <div className="input-field col s1">
+      <div className="input-field col l1 m2 s3">
       <input placeholder="CRN #12" id="CRN #12" type="text" className="validate crn" />
       </div>
       </div>
       <div className="row">
-      <div className="input-field col s6">
+      <div className="input-field col l6 m12 s12">
       <select id="examples">
       <option value="" selected>Custom Schedules: Coming Soon!</option>
       </select>
       <label>Example Schedules</label>
       </div>
-      <div className="input-field col s2">
+      <div className="input-field col l2 m4">
       <select id="start">
       <option value="0" selected>12:00 AM</option>
       <option value="100">1:00 AM</option>
@@ -178,7 +178,7 @@ var Home = React.createClass({
       </select>
       <label>Start Time</label>
       </div>
-      <div className="input-field col s2">
+      <div className="input-field col l2 m4">
       <select id="end">
       <option value="0">12:00 AM</option>
       <option value="100">1:00 AM</option>
@@ -208,8 +208,8 @@ var Home = React.createClass({
       </select>
       <label>End Time</label>
       </div>
-      <div className="col s2">
-      <button id="crn-submit" className="btn waves-effect waves-light" type="submit" name="action" disabled>Submit</button>
+      <div className="col l2 m4">
+      <button id="crn-submit" className="btn waves-effect waves-light" type="submit" name="action" style={{ margin: 'auto' }} disabled>Submit</button>
       </div>
       </div>
       </div>
