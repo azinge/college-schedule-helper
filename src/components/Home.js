@@ -148,7 +148,7 @@ var Home = React.createClass({
       </select>
       <label>Example Schedules</label>
       </div>
-      <div className="input-field col l2 m4">
+      <div className="input-field col l2 m4 s6">
       <select id="start">
       <option value="0" selected>12:00 AM</option>
       <option value="100">1:00 AM</option>
@@ -178,7 +178,7 @@ var Home = React.createClass({
       </select>
       <label>Start Time</label>
       </div>
-      <div className="input-field col l2 m4">
+      <div className="input-field col l2 m4 s6">
       <select id="end">
       <option value="0">12:00 AM</option>
       <option value="100">1:00 AM</option>
@@ -208,7 +208,7 @@ var Home = React.createClass({
       </select>
       <label>End Time</label>
       </div>
-      <div className="col l2 m4">
+      <div className="col l2 m4 s12">
       <button id="crn-submit" className="btn waves-effect waves-light" type="submit" name="action" style={{ margin: 'auto' }} disabled>Submit</button>
       </div>
       </div>
