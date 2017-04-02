@@ -1,6 +1,10 @@
 import React from 'react';
 import Schedule from '../js/react-schedule/Schedule';
+import CourseList from './Panel/CourseList';
+import CourseSearch from './Panel/CourseSearch';
 import CourseJS from './course';
+
+// TODO: Convert CRN select method to course search and select
 
 var Home = React.createClass({
   getInitialState: function () {
@@ -15,7 +19,7 @@ var Home = React.createClass({
     this.setState({
       start: $("#start").val().trim(),
       end: $("#end").val().trim(),
-      courses: entries.map((entry) => {return this.parseDataToCourse(entry)})
+      courses: entries
     });
   },
 
@@ -93,129 +97,48 @@ var Home = React.createClass({
   },
 
   render: function () {
-
+    // TODO: Implement Settings
+    const courses = this.state.courses.map((entry) => {return this.parseDataToCourse(entry)})
     return (
       <div>
-      <div className="section no-pad-bot" id="index-banner">
-      <div className="container">
-      <br /><br />
-      <div className="row center">
-      <Schedule courses={this.state.courses} start={this.state.start} end={this.state.end} />
-      </div>
-      <div className="row center">
-      <div className="row">
-      <div className="input-field col l1 m2 s3">
-      <input placeholder="CRN #1" id="CRN #1" type="text" className="validate crn" />
-      </div>
-      <div className="input-field col l1 m2 s3">
-      <input placeholder="CRN #2" id="CRN #2" type="text" className="validate crn" />
-      </div>
-      <div className="input-field col l1 m2 s3">
-      <input placeholder="CRN #3" id="CRN #3" type="text" className="validate crn" />
-      </div>
-      <div className="input-field col l1 m2 s3">
-      <input placeholder="CRN #4" id="CRN #4" type="text" className="validate crn" />
-      </div>
-      <div className="input-field col l1 m2 s3">
-      <input placeholder="CRN #5" id="CRN #5" type="text" className="validate crn" />
-      </div>
-      <div className="input-field col l1 m2 s3">
-      <input placeholder="CRN #6" id="CRN #6" type="text" className="validate crn" />
-      </div>
-      <div className="input-field col l1 m2 s3">
-      <input placeholder="CRN #7" id="CRN #7" type="text" className="validate crn" />
-      </div>
-      <div className="input-field col l1 m2 s3">
-      <input placeholder="CRN #8" id="CRN #8" type="text" className="validate crn" />
-      </div>
-      <div className="input-field col l1 m2 s3">
-      <input placeholder="CRN #9" id="CRN #9" type="text" className="validate crn" />
-      </div>
-      <div className="input-field col l1 m2 s3">
-      <input placeholder="CRN #10" id="CRN #10" type="text" className="validate crn" />
-      </div>
-      <div className="input-field col l1 m2 s3">
-      <input placeholder="CRN #11" id="CRN #11" type="text" className="validate crn" />
-      </div>
-      <div className="input-field col l1 m2 s3">
-      <input placeholder="CRN #12" id="CRN #12" type="text" className="validate crn" />
-      </div>
-      </div>
-      <div className="row">
-      <div className="input-field col l6 m12 s12">
-      <select id="examples">
-      <option value="" selected>Custom Schedules: Coming Soon!</option>
-      </select>
-      <label>Example Schedules</label>
-      </div>
-      <div className="input-field col l2 m4 s6">
-      <select id="start">
-      <option value="0" selected>12:00 AM</option>
-      <option value="100">1:00 AM</option>
-      <option value="200">2:00 AM</option>
-      <option value="300">3:00 AM</option>
-      <option value="400">4:00 AM</option>
-      <option value="500">5:00 AM</option>
-      <option value="600">6:00 AM</option>
-      <option value="700">7:00 AM</option>
-      <option value="800">8:00 AM</option>
-      <option value="900" selected>9:00 AM</option>
-      <option value="1000">10:00 AM</option>
-      <option value="1100">11:00 AM</option>
-      <option value="1200">12:00 PM</option>
-      <option value="1300">1:00 PM</option>
-      <option value="1400">2:00 PM</option>
-      <option value="1500">3:00 PM</option>
-      <option value="1600">4:00 PM</option>
-      <option value="1700">5:00 PM</option>
-      <option value="1800">6:00 PM</option>
-      <option value="1900">7:00 PM</option>
-      <option value="2000">8:00 PM</option>
-      <option value="2100">9:00 PM</option>
-      <option value="2200">10:00 PM</option>
-      <option value="2300">11:00 PM</option>
-      <option value="2400">12:00 AM</option>
-      </select>
-      <label>Start Time</label>
-      </div>
-      <div className="input-field col l2 m4 s6">
-      <select id="end">
-      <option value="0">12:00 AM</option>
-      <option value="100">1:00 AM</option>
-      <option value="200">2:00 AM</option>
-      <option value="300">3:00 AM</option>
-      <option value="400">4:00 AM</option>
-      <option value="500">5:00 AM</option>
-      <option value="600">6:00 AM</option>
-      <option value="700">7:00 AM</option>
-      <option value="800">8:00 AM</option>
-      <option value="900">9:00 AM</option>
-      <option value="1000">10:00 AM</option>
-      <option value="1100">11:00 AM</option>
-      <option value="1200">12:00 PM</option>
-      <option value="1300">1:00 PM</option>
-      <option value="1400">2:00 PM</option>
-      <option value="1500" selected>3:00 PM</option>
-      <option value="1600">4:00 PM</option>
-      <option value="1700">5:00 PM</option>
-      <option value="1800">6:00 PM</option>
-      <option value="1900">7:00 PM</option>
-      <option value="2000">8:00 PM</option>
-      <option value="2100">9:00 PM</option>
-      <option value="2200">10:00 PM</option>
-      <option value="2300">11:00 PM</option>
-      <option value="2400">12:00 AM</option>
-      </select>
-      <label>End Time</label>
-      </div>
-      <div className="col l2 m4 s12">
-      <button id="crn-submit" className="btn waves-effect waves-light" type="submit" name="action" style={{ margin: 'auto' }} disabled>Submit</button>
-      </div>
-      </div>
-      </div>
-      <br /><br />
-      </div>
-      </div>
+        <div className="section no-pad-bot" id="index-banner">
+          <div className="container">
+            <br /><br />
+            <div className="row center">
+              <Schedule courses={courses} start={this.state.start} end={this.state.end} />
+            </div>
+            <br /><br />
+          </div>
+        </div>
+        <div className="container lower-half">
+          <div className="row">
+            <CourseList />
+            <CourseSearch />
+          </div>
+        </div>
+        <br/><br/>
+        <footer className="page-footer light-blue lighten-1">
+          <div className="container">
+            <div className="row">
+              <div className="col l6 s12">
+                <h5 className="white-text">Settings:</h5>
+                <p className="grey-text text-lighten-4">Select Semester: Coming Soon!</p>
+              </div>
+              <div className="col l4 offset-l2 s12">
+                <h5 className="white-text">Our Other Projects:</h5>
+                <ul>
+                  <li><a className="grey-text text-lighten-3" href="#!">Spotify Transition</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="footer-copyright">
+            <div className="container">
+              By Eddie Azinge and Brian Joerger
+              <a className="grey-text text-lighten-4 right" href="#!">GitHub</a>
+            </div>
+          </div>
+        </footer>
       </div>
     );
   }
