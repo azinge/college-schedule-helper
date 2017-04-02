@@ -144,7 +144,7 @@ var Home = React.createClass({
       <div className="row">
       <div className="input-field col l6 m12 s12">
       <select id="examples">
-      <option value="" selected>Custom Schedules: Coming Soon!</option>
+      <option value="" selected>Example Schedules: Coming Soon!</option>
       </select>
       <label>Example Schedules</label>
       </div>
