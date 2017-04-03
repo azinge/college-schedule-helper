@@ -216,9 +216,31 @@ var Home = React.createClass({
       <br /><br />
       </div>
       </div>
+      <footer className="page-footer light-blue lighten-1">
+        <div className="container">
+          <div className="row">
+            <div className="col l6 s12">
+              <h5 className="white-text">Settings:</h5>
+              <p className="grey-text text-lighten-4">Select Semester: Coming Soon!</p>
+            </div>
+            <div className="col l4 offset-l2 s12">
+              <h5 className="white-text">Our Other Projects:</h5>
+              <ul>
+                <li><a className="grey-text text-lighten-3" href="#!">Spotify Transition</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="footer-copyright">
+          <div className="container">
+            By Eddie Azinge and Brian Joerger
+            <a className="grey-text text-lighten-4 right" href="https://github.com/cazinge/college-schedule-helper" rel="noopener noreferrer" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </footer>
       </div>
     );
-  }
+  },
 });
 
 export default Home;
