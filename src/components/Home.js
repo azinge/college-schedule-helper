@@ -73,7 +73,7 @@ var Home = React.createClass({
     ];
     var onGetInfo = this.onGetInfo;
 
-    $.getJSON("https://cdn.rawgit.com/cazinge/college-schedule-helper/540c0672/data/lmu/json/Fall_2017.json", function(data) {
+    $.getJSON("https://cdn.rawgit.com/cazinge/college-schedule-helper/2e3735fb/data/lmu/json/Fall_2017.json", function(data) {
       courseMap = data;
       $("#crn-submit").prop("disabled", false);
       $('#crn-submit').click(() => {
