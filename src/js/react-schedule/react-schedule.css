@@ -21,7 +21,6 @@
   width: 100%;
   max-width: 1080px;
   margin: auto;
-  overflow-x: scroll;
   display: inline-flex;
   --header-color: #C1D4F1;
 }

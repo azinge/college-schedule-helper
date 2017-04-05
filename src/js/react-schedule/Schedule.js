@@ -207,9 +207,9 @@ function Schedule(props) {
   };
 
   const schedulePanes = [];
-  for (let i = 0; i < titles.length; i++) {
+  for (let i = 1; i < titles.length; i++) {
     schedulePanes.push(
-      <SchedulePane data={titles[i]} gradient={titles[i][1] === 'time' ? timeGradient : gradient} scale={scale} key={titles[i][0]} />,
+      <SchedulePane data={titles[i]} gradient={gradient} scale={scale} key={titles[i][0]} />,
     );
   }
 
@@ -219,7 +219,8 @@ function Schedule(props) {
         <Text>LMU Fall 2017 Schedule</Text>
       </div>
       <div className="schedule-main">
-        {schedulePanes}
+        <SchedulePane data={titles[0]} gradient={timeGradient} scale={scale} key={titles[0][0]} />
+        <span style={{ overflowX: 'scroll', display: 'inline-flex', borderRadius: '10px' }}>{schedulePanes}</span>
       </div>
     </div>
   );
