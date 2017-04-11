@@ -77,11 +77,14 @@ function CourseBlock(props) {
     backgroundColor: color,
     borderColor: color,
     boxShadow: `2px 1px 1px ${color}`,
+    marginBottom: '5px',
   };
   return (
     <div className={`course-block ${color}`} style={styles}>
       <Text>
         {`${course.info.subject} ${course.info.number}-${course.info.section}`}
+
+        <div style={{ fontSize: '65%' }}>{course.alias}</div>
       </Text>
     </div>
   );

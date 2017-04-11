@@ -68,25 +68,31 @@ var Home = React.createClass({
     var entries = [];
     var courseMap = {};
     var exampleSchedules = [
-      ["70816", "70815", "73755", "71009", "71624"],
-      ["70848", "70815", "76780", "77185", "77231", "78158", "78394"]
+      ['45407', '48340', '40371', '47009'],
+      ['46130', '47082', '48948', '49282', '40576'],
+      ['40527', '40401', '41696', '46025'],
     ];
     var onGetInfo = this.onGetInfo;
 
     $.getJSON("https://cdn.rawgit.com/cazinge/college-schedule-helper/2e3735fb/data/lmu/json/Fall_2017.json", function(data) {
       courseMap = data;
       $("#crn-submit").prop("disabled", false);
+      $('#crn-clear').click(() => {
+        $('.crn').each(function () {
+          $(this).val('');
+        })
+      });
       $('#crn-submit').click(() => {
         entries = [];
         if ($('#examples').val() !== "") {
-          exampleSchedules[$('#examples').val()-1].forEach((crn)=>{
-            entries.push(courseMap[crn]);
-          });
-        } else {
+          var crnsToLoad = exampleSchedules[$('#examples').val()-1].slice(0);
           $('.crn').each(function () {
-            courseMap[$(this).val().trim()] && entries.push(courseMap[$(this).val().trim()]);
+            $(this).val(crnsToLoad.pop());
           })
         }
+        $('.crn').each(function () {
+          courseMap[$(this).val().trim()] && entries.push(courseMap[$(this).val().trim()]);
+        })
         onGetInfo(entries);
       });
     });
@@ -138,13 +144,16 @@ var Home = React.createClass({
       <input placeholder="CRN #11" id="CRN #11" type="text" className="validate crn" />
       </div>
       <div className="input-field col l1 m2 s3">
-      <input placeholder="CRN #12" id="CRN #12" type="text" className="validate crn" />
+      <button id="crn-clear" className="btn waves-effect waves-light light-blue lighten-1" type="submit" name="action" style={{ margin: 'auto' }}>Clear</button>
       </div>
       </div>
       <div className="row">
       <div className="input-field col l6 m12 s12">
       <select id="examples">
-      <option value="" selected>Example Schedules: Coming Soon!</option>
+      <option value="" selected>Custom Schedule</option>
+      <option value="1">Example Schedule #1</option>
+      <option value="2">Example Schedule #2</option>
+      <option value="3">Example Schedule #3</option>
       </select>
       <label>Example Schedules</label>
       </div>
